@@ -7,11 +7,11 @@ This project is my first step into contributing to the climate tech space.
 
 The goal of this project is to build a simplified version of a solar forecasting system. It serves as a personal learning journey into the tools and techniques used by Open Climate Fix to help reduce carbon emissions from the UK's National Grid.
 
-# Phase 1: Data Exploration
+## Phase 1: Data Exploration ##
 
 The initial phase focuses on using the py-gsp library to access and visualise live and historical solar generation data for a single Grid Supply Point (GSP) in the UK.
 
-# Key Goals for Phase 1:
+## Key Goals for Phase 1: ##
 
 [x] Set up the project environment.
 
