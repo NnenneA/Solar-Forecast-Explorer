@@ -3,7 +3,7 @@ A data science project to explore, visualise, and eventually forecast solar ener
 
 This project is my first step into contributing to the climate tech space.
 
-# About The Project
+** About The Project **
 
 The goal of this project is to build a simplified version of a solar forecasting system. It serves as a personal learning journey into the tools and techniques used by Open Climate Fix to help reduce carbon emissions from the UK's National Grid.
 
