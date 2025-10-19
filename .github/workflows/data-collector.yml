@@ -14,7 +14,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      # Step 1: Check out your repository's code.
+      # Step 1: Check out the repository's code.
       - name: Checkout repository
         uses: actions/checkout@v4
 
@@ -28,7 +28,7 @@ jobs:
       - name: Install dependencies
         run: pip install requests pandas
 
-      # Step 4: Run your data collection script.
+      # Step 4: Run the data collection script.
       # This will update the solar_data.csv file.
       - name: Run data collection script
         run: python fetch_data.py
