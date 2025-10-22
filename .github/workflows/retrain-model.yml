@@ -1,0 +1,48 @@
+name: Daily Model Retrainer
+
+# Controls when the workflow will run
+on:
+  # Triggers the workflow at 1:00 AM (UTC) every day
+  schedule:
+    - cron: '0 1 * * *'
+  
+  # Allows the workflow to be run manually from the Actions tab
+  workflow_dispatch:
+
+jobs:
+  # Defines the single job that will run, named 'retrain-model'
+  retrain-model:
+    # Specifies the type of virtual machine to run the job on
+    runs-on: ubuntu-latest
+
+    # A sequence of tasks that will be executed
+    steps:
+      # Checks out the repository's code onto the runner
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          # Fetches all git history, required for the auto-commit action
+          fetch-depth: 0
+
+      # Sets up a specific version of Python for the job
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
+
+      # Installs the Python libraries required for the training script
+      - name: Install dependencies
+        run: pip install pandas scikit-learn joblib
+
+      # Executes the main Python script to train the model
+      - name: Run model training script
+        run: python train_model.py
+
+      # Commits the newly trained model file back to the repository
+      - name: Commit new model
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          # The commit message that will be used
+          commit_message: "AI: Re-train and update solar prediction model"
+          # Specifies that only this file should be included in the commit
+          file_pattern: 'solar_model.joblib'
