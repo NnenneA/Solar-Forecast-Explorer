@@ -46,4 +46,3 @@ jobs:
           commit_message: "AI: Re-train and update solar prediction model"
           # Specifies that only this file should be included in the commit
           file_pattern: 'solar_model.joblib'
-
